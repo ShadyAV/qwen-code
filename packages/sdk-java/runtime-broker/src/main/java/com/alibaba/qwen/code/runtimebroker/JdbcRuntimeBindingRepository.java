@@ -249,6 +249,10 @@ public final class JdbcRuntimeBindingRepository
         });
     }
 
+    public static String harnessDrainKey(String value) {
+        return JdbcRepositorySupport.valueKey(value);
+    }
+
     @Override
     public boolean isHarnessDraining(String tenantId, String harnessSessionId) {
         return JdbcRepositorySupport.read(dataSource, connection -> {
